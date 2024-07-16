@@ -1,16 +1,26 @@
-class Teacher():
-    def teach(self):
-        print("Преподаватель учит")
+# Создайте класс Animal с методом make_sound().
+# Затем создайте несколько дочерних классов (например, Dog, Cat, Cow),
+# которые наследуют Animal, но изменяют его поведение (метод make_sound()).
+# В конце создайте список содержащий экземпляры этих животных
+# и вызовите make_sound() для каждого животного в цикле.
 
-class School():
-    def __init__(self, new_teacher):
-        self.teacher = new_teacher
+class Animal():
+    def make_sound(self):
+        pass
 
-    def start_lesson(self):
-        self.teacher.teach()
+class Dog(Animal):
+    def make_sound(self):
+        print("Гав")
 
-my_teacher = Teacher()
+class Cat(Animal):
+    def make_sound(self):
+        print("Мяу")
 
-my_school = School(my_teacher)
+class Cow(Animal):
+    def make_sound(self):
+        print("Муу")
 
-my_school.start_lesson()
+animals = [Dog(), Cat(), Cow()]
+
+for animal in animals:
+    animal.make_sound()
