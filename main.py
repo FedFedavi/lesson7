@@ -1,16 +1,21 @@
-class Teacher():
-    def teach(self):
-        print("Преподаватель учит")
+# Создайте класс Author и класс Book.
+# Класс Book должен использовать композицию для включения автора в качестве объекта.
 
-class School():
-    def __init__(self, new_teacher):
-        self.teacher = new_teacher
+class Author():
+    def __init__(self, name, national):
+        self.name = name
+        self.national = national
 
-    def start_lesson(self):
-        self.teacher.teach()
+class Book():
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
 
-my_teacher = Teacher()
+    def get_info_book(self):
+        print(f"{self.title} - {self.author.name}")
 
-my_school = School(my_teacher)
+author = Author("Лев толстой", "русский")
+book = Book("Война и мир", author)
 
-my_school.start_lesson()
+book.get_info_book()
+
